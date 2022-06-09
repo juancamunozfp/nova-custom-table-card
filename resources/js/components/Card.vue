@@ -92,8 +92,10 @@ export default {
        */
 
       viewName() {
-          const pathNoTrailing = this.$route.path.replace(/\/+$/, "")
-          return pathNoTrailing.split('/').pop()
+        if (this.$route != null) {
+            const pathNoTrailing = this.$route.path.replace(/\/+$/, "")
+            return pathNoTrailing.split('/').pop()
+        }
       },
 
       /**
@@ -114,14 +116,18 @@ export default {
        * Get the current order by value from the query string.
        */
       currentOrderBy() {
-        return this.$route.query[this.orderByParameter] || ''
+        if (this.$route != null) {
+          return this.$route.query[this.orderByParameter] || ''
+        }
       },
 
       /**
        * Get the current order by direction from the query string.
        */
       currentOrderByDirection() {
-        return this.$route.query[this.orderByDirectionParameter] || null
+        if (this.$route != null) {
+          return this.$route.query[this.orderByDirectionParameter] || null
+        }
       },
     },
 
