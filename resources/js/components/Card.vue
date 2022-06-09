@@ -52,7 +52,7 @@
 
 <script>
 
-import { InteractsWithQueryString } from 'laravel-nova'
+import { InteractsWithQueryString } from '../../../vendor/laravel/nova/resources/js/mixins/packages';
 
 export default {
     mixins: [InteractsWithQueryString],
